@@ -7,14 +7,28 @@ div {
   border-color: black;
   background-color: gray;
   text-align: center;
+
 }
 
 .guess {
   background-color: white;
   color: black;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .log {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.stat {
+  border: 2px;
+  border-style: solid;
+  border-color: black;
+  width: 7vw;
+  height: 7vw;
+  background-color: gray;
+  align-content: center;
 }

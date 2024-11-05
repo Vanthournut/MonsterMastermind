@@ -5,7 +5,7 @@ import GuessContainer from './components/GuessContainer'
 function App() {
   return (
     <>
-      <header>Monster Mastermind</header>
+      <h1>Monster Mastermind</h1>
       <GuessContainer></GuessContainer>
     </>
   )

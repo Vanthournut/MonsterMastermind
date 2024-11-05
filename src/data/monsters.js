@@ -16,7 +16,7 @@ Monster Template
 }
 */
 
-export default monsters = [
+export const monsters = [
     {
         name: "Aarakocra",
         size: "Medium",
