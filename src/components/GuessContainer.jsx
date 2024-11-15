@@ -1,8 +1,19 @@
 import Guess from './Guess'
 import GuessLog from './GuessLog'
-import { monsters } from '../data/monsters'
+import { useState } from 'react'
 
-export default function GuessContainer() {
+export default function GuessContainer({monsters, answer}) {
+    const [guesses, setGuesses] = useState([answer])
+    
+    function handleSubmit(monster) {
+        setGuesses((prevGuesses) => {
+            return [
+                monster,
+                ...prevGuesses
+            ];
+        })
+    }
+
     return <>
         <div className="guess">
             <h2 className="stat">Name</h2>
@@ -14,7 +25,7 @@ export default function GuessContainer() {
             <h2 className="stat">Cha</h2>
             <h2 className="stat">Type</h2>
         </div>
-        <Guess monsterList={monsters}/>
-        <GuessLog></GuessLog>
+        <Guess monsterList={monsters} onSubmit={handleSubmit}/>
+        <GuessLog guesses={guesses}></GuessLog>
     </>
 }

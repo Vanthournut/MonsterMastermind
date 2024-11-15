@@ -1,5 +1,14 @@
+import Guess from "./Guess"
+
 export default function GuessLog({guesses}) {
+
+    let logs = [...guesses];
+    const answer = logs.pop();
+    
+
     return <div className="log">
-        Log Goes Here
+        {logs.map((guess) => {
+            return <Guess key={guess.name} monster={guess}/>
+        })}
     </div>
 }

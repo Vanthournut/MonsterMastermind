@@ -1,10 +1,17 @@
 import { useState } from "react";
 
-export default function Guess({monsterList=[], monster=undefined}) {
+export default function Guess({monsterList=[], monster=undefined, onSubmit=undefined, answer=undefined}) {
     const [selectedMonster, setSelectedMonster] = useState('');
     
     function handleChange(event) {
         setSelectedMonster(event.target.value)
+    }
+
+    function handleOnClick(monster) {
+        setSelectedMonster('')
+        if(onSubmit) {
+            onSubmit(monster);
+        }
     }
 
     function checkValidMonster(monster) {
@@ -23,7 +30,7 @@ export default function Guess({monsterList=[], monster=undefined}) {
                 return <option key={monster.name} value={monster.name} />;
             })}
         </datalist>
-        submitButton = <button disabled={monster ? false : true}>Submit</button>;
+        submitButton = <button disabled={monster ? false : true} onClick={()=>handleOnClick(monster)}>Submit</button>;
     } else {
         monsterName = <p className="stat">{monster.name}</p>
     }
