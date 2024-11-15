@@ -3,7 +3,7 @@ import GuessLog from './GuessLog'
 import { useState } from 'react'
 
 export default function GuessContainer({monsters, answer}) {
-    const [guesses, setGuesses] = useState([answer])
+    const [guesses, setGuesses] = useState([answer]);
     
     function handleSubmit(monster) {
         setGuesses((prevGuesses) => {
@@ -26,6 +26,6 @@ export default function GuessContainer({monsters, answer}) {
             <h2 className="stat">Type</h2>
         </div>
         <Guess monsterList={monsters} onSubmit={handleSubmit}/>
-        <GuessLog guesses={guesses}></GuessLog>
+        <GuessLog guesses={guesses} answer={answer}></GuessLog>
     </>
 }

@@ -11,7 +11,7 @@ div {
 }
 
 .guess {
-  background-color: white;
+  background-color: black;
   color: black;
   text-align: center;
   display: flex;
@@ -31,4 +31,23 @@ div {
   height: 7vw;
   background-color: gray;
   align-content: center;
+}
+
+
+.correct {
+  border-color: green;
+}
+
+.incorrect {
+  border-color: red;
+}
+
+.higher {
+  border-color: gold;
+  border-bottom: 0px;
+}
+
+.lower {
+  border-color: gold;
+  border-top: 0px;
 }
